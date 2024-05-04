@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+
+<h1 class="text-center text-success">Edit To-do</h1>
+<div class="text-center">
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table class="table table-dark">
+        {{form.as_table}}
+    </table>
+    <button class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+
+{% endblock nav %}

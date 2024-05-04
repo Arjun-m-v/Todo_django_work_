@@ -1,0 +1,13 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+
+<h1 class="text-center text-success">To-Do Details</h1>
+<div class="w-100 d-flex justify-content-center align-items-center">
+    <div class="border border-3 border-secondary w-50 shadow">
+        <p class="fw-bolder text-center" style="font-size: 20px;">Title : {{data.Title}}</p>
+        <p class="fw-bolder text-center" style="font-size: 20px;">Description : {{data.Description}}</p>
+        <p class="fw-bolder text-center" style="font-size: 20px;">Date : {{data.Date}}</p>
+    </div>
+</div>
+
+{% endblock nav %}

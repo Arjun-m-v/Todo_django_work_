@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{% block nav %}
+
+<h1 class="text-center text-success">Home</h1>
+
+<br><br>
+<div class="justify-content-center align-content-center d-flex">
+  <a href="{% url 'addtd' %}" class="btn btn-success">Add</a>
+</div><br><br><br>
+
+<table class="table table-dark">
+  <tr>
+      <th>Title</th>
+      <!-- <th>Description</th> -->
+      <th>Date</th>
+      <th>More...</th>
+  </tr>
+  {% for i in data %}
+  <tr>
+      <td>{{i.Title}}</td>
+      <!-- <td>{{i.Description}}</td> -->
+      <td>{{i.Date}}</td>
+      <td class="d-flex">
+        <a href="{% url 'dtlstd' i.id %}" class="btn btn-secondary m-1">View</a>
+        <a href="{% url 'deletetd' i.id %}" onclick="return confirm('Are you sure?')" class="btn btn-danger m-1">Delete</a><br>
+        <a href="{% url 'edittd' i.id %}" class="btn btn-info m-1">Edit</a>
+      </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock nav %}
